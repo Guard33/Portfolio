@@ -1,176 +1,179 @@
 import "./index.css";
 
+import moviehub from "./images/moviehub.jpg";
+import fishmarket from "./images/fishmarket.jpg";
+
 function App() {
   return (
-    <div className="container fade-in">
-      {/* HEADER / HERO */}
-      <header className="hero">
-        <h1 className="name">Hemanth Harsha Rangaswamy Anitha</h1>
-        <p className="title">Computer Science Student</p>
+    <div className="container">
 
-        
-      </header>
-
-      {/* PROJECTS FIRST */}
-      <section className="section">
-        <h2>Projects</h2>
-
-        <div className="project-card">
-          <h3>MovieHub Web Application</h3>
-          <p>
-            Developed a full-stack movie application using React, Spring Boot,
-            and MongoDB. Created and maintained detailed version documentation,
-            ensuring accurate synchronization with development updates to
-            improve clarity and review efficiency.
-          </p>
-          <a
-            href="https://github.com/Guard33/moviedux"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub Repository →
-          </a>
-        </div>
-        <div className="project-card">
-          <h3>Fish Market</h3>
-          <p>
-            Built a marketplace-style application focused on fish listings and
-            product browsing, with a clean interface and repository-managed
-            source control for collaborative development.
-          </p>
-          <a
-            href="https://github.com/Guard33/FishMarket"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub Repository →
-          </a>
-        </div>
+      {/* HERO INTRO */}
+      <section className="intro">
+        <h1 className="intro-name">Hemanth Harsha</h1>
+        <p className="intro-scroll">Scroll to see more about me ↓</p>
       </section>
 
-      {/* PROFESSIONAL SUMMARY */}
+
+
+      {/* PROJECTS */}
       <section className="section">
-        <h2>Professional Summary</h2>
-        <p>
+
+        <h2 className="section-title">Projects</h2>
+
+        <div className="projects-grid">
+
+          <ProjectCard
+            image={moviehub}
+            title="MovieHub"
+            description="Full-stack movie application built using React, Spring Boot and MongoDB."
+            tech={["React","Spring Boot","MongoDB"]}
+            link="https://github.com/Guard33/moviedux"
+          />
+
+          <ProjectCard
+            image={fishmarket}
+            title="Fish Market"
+            description="Marketplace-style application for browsing fish product listings."
+            tech={["Vue","Spring Boot","MySQL"]}
+            link="https://github.com/Guard33/FishMarket"
+          />
+
+        </div>
+
+      </section>
+
+
+
+      {/* SUMMARY */}
+      <section className="section">
+
+        <h2 className="section-title">Professional Summary</h2>
+
+        <p className="summary">
           Detail-oriented Computer Science student skilled in analyzing complex
-          information, resolving inconsistencies, and producing clear, accurate
-          technical documentation. Strong experience maintaining organized
-          version control practices and communicating technical details clearly.
+          information, resolving inconsistencies, and producing clear technical
+          documentation. Strong experience with version control workflows and
+          collaborative development environments.
         </p>
+
       </section>
 
-      {/* SKILLS WITH ICON PILL BADGES */}
+
+
+      {/* SKILLS */}
       <section className="section">
-        <h2>Stacks / Tools</h2>
 
-        <div className="skill-grid">
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-            <span>React</span>
-          </div>
+        <h2 className="section-title">Stacks / Tools</h2>
 
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-            <span>TypeScript</span>
-          </div>
+        <div className="skills-grid">
 
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
-            <span>Python</span>
-          </div>
+          <Skill icon="react/react-original.svg" name="React"/>
+          <Skill icon="typescript/typescript-original.svg" name="TypeScript"/>
+          <Skill icon="python/python-original.svg" name="Python"/>
+          <Skill icon="java/java-original.svg" name="Java"/>
+          <Skill icon="nodejs/nodejs-original.svg" name="Node.js"/>
+          <Skill icon="mongodb/mongodb-original.svg" name="MongoDB"/>
+          <Skill icon="mysql/mysql-original.svg" name="MySQL"/>
+          <Skill icon="docker/docker-original.svg" name="Docker"/>
+          <Skill icon="git/git-original.svg" name="Git"/>
+          <Skill icon="github/github-original.svg" name="GitHub"/>
 
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
-            <span>C</span>
-          </div>
-
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
-            <span>Tailwind CSS</span>
-          </div>
-
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
-            <span>Java</span>
-          </div>
-
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
-            <span>Node.js</span>
-          </div>
-
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" />
-            <span>MongoDB</span>
-          </div>
-
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
-            <span>MySQL</span>
-          </div>
-
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
-            <span>Docker</span>
-          </div>
-
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
-            <span>Git</span>
-          </div>
-
-          <div className="skill-pill">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
-            <span>GitHub</span>
-          </div>
         </div>
+
       </section>
 
-      
-{/* CONTACT ME */}
-<section className="section contact-section">
-  <h2>Contact Me</h2>
 
-  <div className="contact-icons">
-    <a
-      href="https://github.com/Guard33"
-      target="_blank"
-      rel="noreferrer"
-      className="contact-icon-box"
-    >
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
-    </a>
 
-    <a
-      href="https://www.linkedin.com/in/hemanth-harsha-rangaswamy-anitha-a59462313/"
-      target="_blank"
-      rel="noreferrer"
-      className="contact-icon-box"
-    >
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" />
-    </a>
+      {/* CONTACT */}
+      <section className="contact-section">
 
-    <a
-      href="mailto:hemanthhra12@gmail.com"
-      className="contact-icon-box"
-    >
-      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" />
-    </a>
-  </div>
+        <h2>Contact Me</h2>
 
-  <div className="email-pill">
-    hemanthhra12@gmail.com
-  </div>
-</section>
+        <div className="contact-icons">
+
+          <a href="https://github.com/Guard33" target="_blank" rel="noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/hemanth-harsha-rangaswamy-anitha-a59462313/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"/>
+          </a>
+
+          <a href="mailto:hemanthhra12@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"/>
+          </a>
+
+        </div>
+
+        <p className="email">hemanthhra12@gmail.com</p>
+
+      </section>
+
+
 
       {/* FOOTER */}
       <footer className="footer">
         © {new Date().getFullYear()} Hemanth Harsha Rangaswamy Anitha
       </footer>
+
     </div>
   );
 }
 
+
+
+function ProjectCard({image,title,description,tech,link}){
+
+  return(
+
+    <div className="project-card">
+
+      <img src={image} className="project-image"/>
+
+      <div className="project-content">
+
+        <h3>{title}</h3>
+
+        <p>{description}</p>
+
+        <div className="tech-tags">
+          {tech.map((t,i)=>(
+            <span key={i}>{t}</span>
+          ))}
+        </div>
+
+        <a href={link} target="_blank" rel="noreferrer">
+          GitHub →
+        </a>
+
+      </div>
+
+    </div>
+
+  )
+
+}
+
+
+
+function Skill({icon,name}){
+
+  return(
+
+    <div className="skill">
+
+      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}`}/>
+
+      <span>{name}</span>
+
+    </div>
+
+  )
+
+}
+
 export default App;
-
-
