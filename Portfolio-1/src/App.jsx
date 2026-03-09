@@ -31,6 +31,21 @@ function App() {
             GitHub Repository →
           </a>
         </div>
+        <div className="project-card">
+          <h3>Fish Market</h3>
+          <p>
+            Built a marketplace-style application focused on fish listings and
+            product browsing, with a clean interface and repository-managed
+            source control for collaborative development.
+          </p>
+          <a
+            href="https://github.com/Guard33/FishMarket"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub Repository →
+          </a>
+        </div>
       </section>
 
       {/* PROFESSIONAL SUMMARY */}
@@ -157,3 +172,5 @@ function App() {
 }
 
 export default App;
+
+
