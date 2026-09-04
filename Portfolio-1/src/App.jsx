@@ -11,14 +11,24 @@ function App() {
       {/* HERO INTRO */}
       <section className="intro">
         <h1 className="intro-name">Hemanth Harsha</h1>
-        <p className="intro-scroll">Scroll to see more about me ↓</p>
+        <p className="intro-role">Full-Stack Software Engineer</p>
+        <p className="intro-tagline">
+          I build production web applications end-to-end — React and Vue front ends,
+          Spring Boot and Node.js APIs, backed by SQL and NoSQL data layers.
+        </p>
+        <div className="intro-actions">
+          <a href="#projects" className="btn btn-primary">View Projects</a>
+          <a href="#contact" className="btn btn-outline">Get in Touch</a>
+        </div>
+        <p className="intro-scroll">Scroll to see more ↓</p>
       </section>
 
 
 
       {/* PROJECTS */}
-      <section className="section">
+      <section className="section" id="projects">
 
+        <p className="section-kicker">Work</p>
         <h2 className="section-title">Projects</h2>
 
         <div className="projects-grid">
@@ -35,7 +45,7 @@ function App() {
           <ProjectCard
             image={moviehub}
             title="MovieHub"
-            description="Full-stack movie application built using React, Spring Boot and MongoDB."
+            description="Full-stack movie discovery app with authentication and watchlist management — REST APIs backed by a MongoDB schema modeled for efficient queries, built cloud-deployment-ready on AWS."
             tech={["React","Spring Boot","MongoDB"]}
             link="https://github.com/Guard33/moviedux"
           />
@@ -43,7 +53,7 @@ function App() {
           <ProjectCard
             image={fishmarket}
             title="Fish Market"
-            description="Marketplace-style application for browsing fish product listings."
+            description="Full-stack e-commerce marketplace with real-time cart updates and OAuth authentication, backed by a relational schema for inventory, users, and transactions — deployed on Azure."
             tech={["Vue","Spring Boot","MySQL"]}
             link="https://github.com/Guard33/FishMarket"
           />
@@ -57,13 +67,17 @@ function App() {
       {/* SUMMARY */}
       <section className="section">
 
+        <p className="section-kicker">About</p>
         <h2 className="section-title">Professional Summary</h2>
 
         <p className="summary">
-          Detail-oriented Computer Science student skilled in analyzing complex
-          information, resolving inconsistencies, and producing clear technical
-          documentation. Strong experience with version control workflows and
-          collaborative development environments.
+          Full-stack software engineer and Computer Science co-op student at Saint Mary's
+          University, building production-ready applications across React, Node.js, and
+          Spring Boot. Currently evaluating AI model outputs for accuracy and consistency
+          at Outlier AI, and previously built React-based, form-driven interfaces and a
+          reusable component library as a freelance engineer at Andromeda UI. Comfortable
+          owning a project end-to-end — from relational and document database design
+          through deployment on AWS, Azure, and GCP.
         </p>
 
       </section>
@@ -73,7 +87,8 @@ function App() {
       {/* SKILLS */}
       <section className="section">
 
-        <h2 className="section-title">Stacks / Tools</h2>
+        <p className="section-kicker">Toolkit</p>
+        <h2 className="section-title">Skills</h2>
 
         <div className="skills-grid">
 
@@ -95,26 +110,31 @@ function App() {
 
 
       {/* CONTACT */}
-      <section className="contact-section">
+      <section className="contact-section" id="contact">
 
+        <p className="section-kicker">Get in Touch</p>
         <h2>Contact Me</h2>
 
         <div className="contact-icons">
 
-          <a href="https://github.com/Guard33" target="_blank" rel="noreferrer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/>
+          <a href="https://github.com/Guard33" target="_blank" rel="noreferrer" className="contact-tile">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt=""/>
+            <span>GitHub</span>
           </a>
 
           <a
             href="https://www.linkedin.com/in/hemanth-harsha-rangaswamy-anitha-a59462313/"
             target="_blank"
             rel="noreferrer"
+            className="contact-tile"
           >
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"/>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt=""/>
+            <span>LinkedIn</span>
           </a>
 
-          <a href="mailto:hemanthhra12@gmail.com">
-            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"/>
+          <a href="mailto:hemanthhra12@gmail.com" className="contact-tile">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt=""/>
+            <span>Email</span>
           </a>
 
         </div>
@@ -156,15 +176,17 @@ function ProjectCard({image,title,description,tech,link,liveLink}){
           ))}
         </div>
 
-        {liveLink && (
-          <a href={liveLink} target="_blank" rel="noreferrer" style={{ marginRight: 16 }}>
-            Live Demo →
-          </a>
-        )}
+        <div className="links">
+          {liveLink && (
+            <a href={liveLink} target="_blank" rel="noreferrer">
+              Live Demo →
+            </a>
+          )}
 
-        <a href={link} target="_blank" rel="noreferrer">
-          GitHub →
-        </a>
+          <a href={link} target="_blank" rel="noreferrer">
+            GitHub →
+          </a>
+        </div>
 
       </div>
 
@@ -182,7 +204,7 @@ function Skill({icon,name}){
 
     <div className="skill">
 
-      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}`}/>
+      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}`} alt=""/>
 
       <span>{name}</span>
 
