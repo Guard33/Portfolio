@@ -2,6 +2,7 @@ import "./index.css";
 
 import moviehub from "./images/moviehub.jpg";
 import fishmarket from "./images/fishmarket.jpg";
+import notepad from "./images/notepad.svg";
 
 function App() {
   return (
@@ -21,6 +22,15 @@ function App() {
         <h2 className="section-title">Projects</h2>
 
         <div className="projects-grid">
+
+          <ProjectCard
+            image={notepad}
+            title="Notepad"
+            description="Full-stack notes app — sign up, write and tag notes, search, pin, archive, and trash/restore. Deployed live on Vercel and Render; the free-tier backend sleeps after 15 minutes idle, so the first load after a gap can take up to a minute to wake up."
+            tech={["React","Express","MongoDB"]}
+            link="https://github.com/Guard33/notepad-app"
+            liveLink="https://notepad-app-brown.vercel.app"
+          />
 
           <ProjectCard
             image={moviehub}
@@ -126,7 +136,7 @@ function App() {
 
 
 
-function ProjectCard({image,title,description,tech,link}){
+function ProjectCard({image,title,description,tech,link,liveLink}){
 
   return(
 
@@ -145,6 +155,12 @@ function ProjectCard({image,title,description,tech,link}){
             <span key={i}>{t}</span>
           ))}
         </div>
+
+        {liveLink && (
+          <a href={liveLink} target="_blank" rel="noreferrer" style={{ marginRight: 16 }}>
+            Live Demo →
+          </a>
+        )}
 
         <a href={link} target="_blank" rel="noreferrer">
           GitHub →
