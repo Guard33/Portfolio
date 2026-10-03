@@ -21,6 +21,7 @@ body{
   background:var(--bg);
   color:var(--text);
   -webkit-font-smoothing: antialiased;
+  overflow-x:hidden;
 }
 
 .container{
@@ -41,6 +42,22 @@ body{
   align-items:center;
   text-align:center;
   padding:60px 0;
+  position:relative;
+  isolation:isolate;
+  text-shadow:0 2px 14px rgba(5,10,30,0.75);
+}
+
+/* Pixel night-street scene behind the hero, full-bleed past the container */
+.intro-scene{
+  position:absolute;
+  z-index:-1;
+  top:-40px;
+  left:calc(50% - 50vw);
+  width:100vw;
+  height:calc(100% + 40px);
+  display:block;
+  image-rendering:crisp-edges;
+  image-rendering:pixelated;
 }
 
 .intro-name{

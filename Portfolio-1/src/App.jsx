@@ -3,6 +3,7 @@ import "./index.css";
 import moviehub from "./images/moviehub.jpg";
 import fishmarket from "./images/fishmarket.jpg";
 import notepad from "./images/notepad.svg";
+import NightStreet from "./components/NightStreet";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
 
       {/* HERO INTRO */}
       <section className="intro">
+        <NightStreet />
         <h1 className="intro-name">Hemanth Harsha</h1>
         <p className="intro-role">Full-Stack Software Engineer</p>
         <p className="intro-tagline">
