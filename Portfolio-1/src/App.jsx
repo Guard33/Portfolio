@@ -2,7 +2,7 @@ import "./index.css";
 
 import moviehub from "./images/moviehub.jpg";
 import fishmarket from "./images/fishmarket.jpg";
-import notepad from "./images/notepad.svg";
+import tidewater from "./images/tidewater.jpg";
 import NightStreet from "./components/NightStreet";
 
 function App() {
@@ -36,12 +36,12 @@ function App() {
         <div className="projects-grid">
 
           <ProjectCard
-            image={notepad}
-            title="Notepad"
-            description="Full-stack notes app — sign up, write and tag notes, search, pin, archive, and trash/restore. Deployed live on Vercel and Render; the free-tier backend sleeps after 15 minutes idle, so the first load after a gap can take up to a minute to wake up."
+            image={tidewater}
+            title="Tidewater Prints"
+            description="Full-stack e-commerce store for generative art posters — search and filters, cart, checkout with Canadian tax by province, order history, and a role-based admin dashboard. Server-side pricing and atomic stock reservation; try it with a one-click demo account."
             tech={["React","Express","MongoDB"]}
             link="https://github.com/Guard33/notepad-app"
-            liveLink="https://notepad-app-brown.vercel.app"
+            liveLink="https://tidewater-prints.vercel.app"
           />
 
           <ProjectCard
