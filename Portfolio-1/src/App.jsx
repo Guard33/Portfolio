@@ -3,6 +3,8 @@ import "./index.css";
 import moviehub from "./images/moviehub.jpg";
 import fishmarket from "./images/fishmarket.jpg";
 import tidewater from "./images/tidewater.jpg";
+import classifier from "./images/classifier.jpg";
+import xenomorph from "./images/xenomorph.jpg";
 import NightStreet from "./components/NightStreet";
 
 function App() {
@@ -45,11 +47,27 @@ function App() {
           />
 
           <ProjectCard
+            image={classifier}
+            title="AI Output Quality Classifier"
+            description="Predicts whether an LLM's response will be rated high or low quality, trained on human-annotated UltraFeedback data. Sentence embeddings plus gradient boosting (0.744 F1 on 2,000 held-out pairs, compared against logistic regression), served through a FastAPI endpoint with a small React demo."
+            tech={["Python","scikit-learn","FastAPI","React"]}
+            link="https://github.com/Guard33/ai-quality-classifier"
+          />
+
+          <ProjectCard
             image={moviehub}
             title="MovieHub"
             description="Full-stack movie discovery app with authentication and watchlist management — REST APIs backed by a MongoDB schema modeled for efficient queries, built cloud-deployment-ready on AWS."
             tech={["React","Spring Boot","MongoDB"]}
             link="https://github.com/Guard33/moviedux"
+          />
+
+          <ProjectCard
+            image={xenomorph}
+            title="Xenomorph"
+            description="Top-down pixel-art stealth game built by a team of four: befriend a town before anyone escapes. Three playable levels with guard AI (vision cones, searchlights, alarms), crowd behaviour that avoids guarded exits, and a skill tree. Built for CSCI 3836 at Saint Mary's."
+            tech={["Unity","C#","Team project"]}
+            link="https://github.com/Guard33/xenomorph"
           />
 
           <ProjectCard
@@ -86,6 +104,43 @@ function App() {
 
 
 
+      {/* EXPERIENCE + EDUCATION */}
+      <section className="section">
+
+        <p className="section-kicker">Background</p>
+        <h2 className="section-title">Experience &amp; Education</h2>
+
+        <div className="timeline">
+
+          <div className="timeline-item">
+            <div className="timeline-head">
+              <h3>AI Contributor <span>· Outlier AI (remote, freelance)</span></h3>
+              <p className="timeline-date">Jun 2025 – May 2026</p>
+            </div>
+            <ul>
+              <li>Evaluated 250+ AI outputs for accuracy, consistency, and adherence to requirements, holding a 4.6/5 average quality rating.</li>
+              <li>Wrote structured evaluation reports and flagged error patterns and invalid data to guide model refinement.</li>
+              <li>Andromeda UI project (Jun – Jul 2025): built 6+ React pages for form-driven workflows and 15+ reusable components, with documentation.</li>
+            </ul>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-head">
+              <h3>BSc Computer Science <span>· Saint Mary's University, Halifax</span></h3>
+              <p className="timeline-date">Sep 2023 – Dec 2026 (expected)</p>
+            </div>
+            <ul>
+              <li>Co-operative Education Program.</li>
+              <li>Coursework: data structures, databases, software engineering, systems analysis, computer graphics, game development.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </section>
+
+
+
       {/* SKILLS */}
       <section className="section">
 
@@ -99,11 +154,17 @@ function App() {
           <Skill icon="python/python-original.svg" name="Python"/>
           <Skill icon="java/java-original.svg" name="Java"/>
           <Skill icon="nodejs/nodejs-original.svg" name="Node.js"/>
+          <Skill icon="express/express-original.svg" name="Express" invert/>
+          <Skill icon="spring/spring-original.svg" name="Spring Boot"/>
+          <Skill icon="vuejs/vuejs-original.svg" name="Vue.js"/>
+          <Skill icon="tailwindcss/tailwindcss-original.svg" name="Tailwind"/>
+          <Skill icon="fastapi/fastapi-original.svg" name="FastAPI"/>
           <Skill icon="mongodb/mongodb-original.svg" name="MongoDB"/>
           <Skill icon="mysql/mysql-original.svg" name="MySQL"/>
           <Skill icon="docker/docker-original.svg" name="Docker"/>
           <Skill icon="git/git-original.svg" name="Git"/>
-          <Skill icon="github/github-original.svg" name="GitHub"/>
+          <Skill icon="github/github-original.svg" name="GitHub" invert/>
+          <Skill icon="unity/unity-original.svg" name="Unity" invert/>
 
         </div>
 
@@ -200,13 +261,14 @@ function ProjectCard({image,title,description,tech,link,liveLink}){
 
 
 
-function Skill({icon,name}){
+function Skill({icon,name,invert}){
 
   return(
 
     <div className="skill">
 
-      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}`} alt=""/>
+      {/* invert: black logos (GitHub, Express, Unity) would vanish on the dark tile */}
+      <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}`} alt="" className={invert ? "invert" : undefined}/>
 
       <span>{name}</span>
 
