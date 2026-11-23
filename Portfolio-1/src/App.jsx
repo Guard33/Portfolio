@@ -73,13 +73,13 @@ function App() {
         <h2 className="section-title">Professional Summary</h2>
 
         <p className="summary">
-          Full-stack software engineer and Computer Science co-op student at Saint Mary's
-          University, building production-ready applications across React, Node.js, and
-          Spring Boot. Currently evaluating AI model outputs for accuracy and consistency
-          at Outlier AI, and previously built React-based, form-driven interfaces and a
-          reusable component library as a freelance engineer at Andromeda UI. Comfortable
-          owning a project end-to-end — from relational and document database design
-          through deployment on AWS, Azure, and GCP.
+          Full-stack software engineer and final-year Computer Science student at Saint
+          Mary's University (graduating December 2026), building production-ready
+          applications across React, Node.js, and Spring Boot. At Outlier AI (2025–2026)
+          I evaluated AI model outputs for accuracy and consistency, and built React-based,
+          form-driven interfaces and a reusable component library for the Andromeda UI
+          project. Comfortable owning a project end-to-end — from relational and document
+          database design through deployment on AWS, Azure, and GCP.
         </p>
 
       </section>
